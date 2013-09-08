@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Uncomment to make IE8 render like IE7 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Baytfix system 1.0" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  <div id="login">
+  
+  <h6>Powered by RaDIrkA</h6>
+  <h5>&copy; spletko.eu</h5>
+
+
+
+  </div>
+  <div class="fixed">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>Baytfix System 1.0 Beta Build</h1>
+        <p class="klikni">Admin prijava</p>
+      </li>
+
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu"><a href="#"><span></span></a></li>
+    </ul>
+
+
+    
+    <section class="top-bar-section">
+      <ul class="title-area">
+      <!-- Title Area -->
+      <div id="prijavljeni">
+
+        <li class="name_a">
+          <h1><% if user_signed_in? %>
+      Prijavljeni ste kot <span class="p"><%= current_user.email %></span> |
+      Niste pravi?<br />
+      <%= link_to "Odjavi me", destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Registrirajte se", new_user_registration_path,"data-reveal-id" => "registracija" %> ali <%= link_to "Prijavite se", new_user_session_path, "data-reveal-id" => "prijava" %>
+    <% end %></h1>
+        </li>
+       </div> 
+       </ul> 
+
+    
+    
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider hide-for-small"></li>
+      <li class="has-dropdown"><a href="#">Pojdi na</a>
+
+        <ul class="dropdown">
+          <li><label>Dropdown Level 1 Label</label></li>
+          <li class="has-dropdown"><a href="#" class="">Dropdown Level 1a</a>
+
+            <ul class="dropdown">
+              <li><a href="#">Dropdown Level 2a</a></li>
+              <li><a href="#">Dropdown Level 2b</a></li>
+              <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+                <ul class="dropdown">
+                  <li><a href="#">Dropdown Level 3a</a></li>
+                  <li><a href="#">Dropdown Level 3b</a></li>
+                  <li><a href="#">Dropdown Level 3c</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown Level 2d</a></li>
+              <li><a href="#">Dropdown Level 2e</a></li>
+              <li><a href="#">Dropdown Level 2f</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Dropdown Level 1b</a></li>
+          <li><a href="#">Dropdown Level 1c</a></li>
+          <li class="divider"></li>
+          <li><label>Dropdown Level 1 Label</label></li>
+          <li><a href="#">Dropdown Level 1d</a></li>
+          <li><a href="#">Dropdown Level 1e</a></li>
+          <li><a href="#">Dropdown Level 1f</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li class="has-form">
+        <form>
+          <div class="row collapse">
+            <div class="small-8 columns">
+              <input type="text">
+            </div>
+            <div class="small-4 columns">
+              <a href="#" class="alert button">Search</a>
+            </div>
+          </div>
+        </form>
+      </li>
+    
+    </ul>
+  </section>
+</nav>
+ </div>
+ <br />
+
+    <div class="large-12 columns">
+ 
+      <!-- Navigation -->
+        <hr>
+        <ul class="button-group">
+          
+          <li><%= link_to "nevem kam", domov_path, class: "button" %></li>
+          <li><%= link_to "Domov", domov_path, class: "button" %></li>
+          <li class="button"><%= link_to_unless_current "Pisite nam", contact_path %></li>
+          <li><%= link_to_unless_current "contact", contact_path %></li>
+        </ul><br>
+   
+      <!-- End Navigation -->
+<a href="/users/sign_up" data-reveal-id="myModal" data-reveal-ajax="true">odpri</a>
+<button data-reveal-id="myModal" data-reveal-ajax="http://localhost:3000/users/sign_up">
+    Click Me For A Modal
+</button>
+<a href="#" data-reveal-id="prijava">Prijava</a>
+<a href="#" data-reveal-id="registracija">Registracija</a>
+
+<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+
+
+
+
+
+  
+
+  <%= yield %>
+
+
+    
+      <!-- Footer -->
+      <hr>
+      <div style="margin:200px auto; position:relative;">
+      <div class="show-footer" style="display:none;">
+      <div id="footer">
+         <div class="back-to-up">
+           <a id="top" href="#">Nazaj na vrh</a>
+         </div> 
+            
+          <div class="row">
+              <div class="large-12 columns">
+                  <p>&copy; Copyright no one at all. Go to town.</p>
+                  <p>nasa stvar nas projekt </p>
+              </div>
+          </div>  
+
+            
+          
+              
+
+
+            <div class="row">
+              <div class="large-8 columns">
+                  <ul class="inline-list right">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                  </ul>
+              </div>
+            </div>  
+  
+        
+      
+      </div>
+ 
+      <!-- End Footer -->
+ 
+
+
+
+    
+
+    
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
+
+
+
+<!--prijava popup -->
+<div id="prijava" class="reveal-modal">
+  <h3>Prijavite se</h3>
+<div class="row">
+<div class="large-4 columns">
+  <form accept-charset="UTF-8" action="/users/sign_in" class="new_user" id="new_user" method="post">
+<div style="margin:0;padding:0;display:inline">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="RRrZcpxMPMeidchi6kAe+k/1XGTtO5qw2DaAnxrShsc=" />
+</div> 
+<div>
+  <label for="user_email">Email</label>
+</div>
+  <input autofocus="autofocus" id="user_email" name="user[email]" placeholder="Vaš email" type="email" value="" />
+<div>
+  <label for="user_password">Geslo</label>
+</div>
+  <input id="user_password" name="user[password]" placeholder="Vaše geslo" type="password" />
+<div>
+  <input name="user[remember_me]" type="hidden" value="0" />
+  <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" /> 
+  <label for="user_remember_me">Zapomni se</label>
+</div>
+<div>
+  <input name="commit" type="submit" value="Prijava" /></div>
+</form>
+  <a href="#" data-reveal-id="registracija">Registracija</a><br />
+  <a href="#" data-reveal-id="reset-pass">Ste pozabili vaše geslo?</a><br />
+</div>
+</div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<!--registracija popup -->
+<div id="registracija" class="reveal-modal">
+  <h3>Registrirajte se</h3>
+<div class="row">
+<div class="large-4 columns">
+  <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post">
+<div style="margin:0;padding:0;display:inline">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="RRrZcpxMPMeidchi6kAe+k/1XGTtO5qw2DaAnxrShsc=" />
+</div>
+<div>
+  <label for="user_email">Email</label>
+</div>
+  <input autofocus="autofocus" id="user_email" name="user[email]" placeholder="Vaš email" type="email" value="" />
+<div>
+  <label for="user_password">Geslo</label>
+</div>
+  <input id="user_password" name="user[password]" placeholder="Vaše geslo" type="password" />
+<div>
+  <label for="user_password_confirmation">Potrditev gesla</label>
+</div>
+  <input id="user_password_confirmation" name="user[password_confirmation]" placeholder="Ponovno vnesite vaše geslo" type="password" />
+<div>
+  <input name="commit" type="submit" value="Registrirajte se" />
+</div>
+</form>
+<a href="#" data-reveal-id="prijava">Prijava</a><br />
+</div></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<!--reset password popup --> 
+<div id="reset-pass" class="reveal-modal">
+  <h3>Ste pozabili vaše geslo?</h3>
+<div class="row">
+<div class="large-4 columns">
+  <form accept-charset="UTF-8" action="/users/password" class="new_user" id="new_user" method="post">
+<div style="margin:0;padding:0;display:inline">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="RRrZcpxMPMeidchi6kAe+k/1XGTtO5qw2DaAnxrShsc=" />
+</div>
+<div>
+  <label for="user_email">Email</label><br />
+  <input autofocus="autofocus" id="user_email" name="user[email]" placeholder="Vnesite vaš email" type="email" value="" />
+</div>
+<div>
+  <input name="commit" type="submit" value="Zahtevaj novo geslo" />
+</div>
+</form>
+<a href="#" data-reveal-id="prijava">Prijava</a><br />
+<a href="#" data-reveal-id="registracija">Registracija</a><br />
+</div></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+      
+    
+
+ 
+ 
+      

@@ -1,0 +1,12 @@
+<div id="notice">
+  <%= notice %>
+</div><!--//notice-->
+
+<p> <%= blog.Name %> </p>
+
+<p> <%= blog.subject %> </p>
+
+<%= link_to 'show', blog %>
+<%= link_to 'delete', blog, method: :delete, data: { confirm: 'si prepričan'} %> |
+<%= link_to 'edit', edit_blog_path(blog) %> |
+<%= link_to 'back', domov_path %>

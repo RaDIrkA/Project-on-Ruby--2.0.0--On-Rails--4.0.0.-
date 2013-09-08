@@ -1,0 +1,33 @@
+<h1>Listing comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cifra članka</th>
+      <th>Št. komentarja</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Comment</th>
+      <th>EDIT</th>
+      <th>UNIČI</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.blog_id %></td>
+        <td><%= comment.id %></td>
+        <td><%= comment.name %></td>
+        <td><%= comment.email %></td>
+        <td><%= comment.comment %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'si prepričan'} %></td>
+              
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

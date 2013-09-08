@@ -1,0 +1,9 @@
+<%= div_for comment do %>
+
+  <h4> <%= comment.name %> - <small> <%= comment.email %> </small> </h4>
+  <p> <%= comment.subject %> </p>
+
+  <%= link_to 'edit', edit_blog_comment_path(@blog, comment) %> |
+  <%= link_to 'delete', blog_comment_path(@post, comment), :confirm => 'ste prepričani?', :method %>
+
+<% end %>  

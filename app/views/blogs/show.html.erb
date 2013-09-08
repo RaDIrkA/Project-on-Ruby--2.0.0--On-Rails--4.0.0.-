@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <span class="radius secondary label"><%= @blog.Name %></span>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @blog.subject %>
+</p>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
+<hr>	
+
+<h4> Komentarji </h4>
+
+
+
+  
+    <% @blog.comments.each do |c| %>
+      <p><strong>ID:</strong> <%=h c.id %></p>
+      <p><strong>pravi:</strong> <%=h c.name %></p>    
+      <p><strong>komentarček:</strong><br><%=h c.comment %></p>   
+      <p class="datum"><strong>Objavljeno:</strong> <%=h c.created_at.strftime('%I:%M %b %d, %Y') %> <%= link_to 'Uredi', edit_comment_path(c) %></p>
+          <%= link_to 'Domov', domov_path %> 
+      <hr>
+      <% end %>
+
+<h5>Pustite svoj komentar</h5>
+
+
+<%= form_for([@blog, @blog.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>	
+
+
+
+
