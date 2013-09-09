@@ -8,6 +8,7 @@ gem 'sqlite3', :group => [:development, :test]
 
 group :production do
 	gem 'pg'
+	gem 'taps'
 end
 
 gem 'devise'
@@ -22,13 +23,15 @@ gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
 # Use Uglifier agem 'commontator', '~> 1.1.0's compressor for JavaScript assets
 # Use SCSS for stylesheets
 # Use CoffeeScript for .js.coffee assets and views
+group :assets do	
+	gem 'coffee-rails', '~> 4.0.0'
+	gem 'sass-rails', '~> 4.0.0'
+	gem 'uglifier', '>= 1.3.0'
+	
+end
 
-gem 'coffee-rails', '~> 4.0.0'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'zurb-foundation'
 gem "compass"
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
