@@ -21,8 +21,8 @@
   </head>
 
   <body>
+  <div id="hideMenu">
   <div id="login">
-  
   <h6>Powered by RaDIrkA</h6>
   <h5>&copy; spletko.eu</h5>
 
@@ -117,7 +117,7 @@
 </nav>
  </div>
  <br />
-
+ </div>
     <div class="large-12 columns">
  
       <!-- Navigation -->
@@ -129,7 +129,7 @@
           <li class="button"><%= link_to_unless_current "Pisite nam", contact_path %></li>
           <li><%= link_to_unless_current "contact", contact_path %></li>
         </ul><br>
-   
+  
       <!-- End Navigation -->
 <a href="/users/sign_up" data-reveal-id="myModal" data-reveal-ajax="true">odpri</a>
 <button data-reveal-id="myModal" data-reveal-ajax="http://localhost:3000/users/sign_up">
@@ -142,12 +142,15 @@
 
 
 
+<%= yield %>
+
+
 
 
 
   
 
-  <%= yield %>
+ 
 
 
     
@@ -157,18 +160,23 @@
       <div class="show-footer" style="display:none;">
       <div id="footer">
          <div class="back-to-up">
-           <a id="top" href="#">Nazaj na vrh</a>
+           <a id="top" href="#"><span style="z-index:3;" data-tooltip class="tip-left" title="Na vrh"><img src="/assets/top.png" class="backtop" alt="spletko.eu"></span></a>
          </div> 
-            
+
+
           <div class="row">
               <div class="large-12 columns">
                   <p>&copy; Copyright no one at all. Go to town.</p>
                   <p>nasa stvar nas projekt </p>
+                  
               </div>
           </div>  
-
             
-          
+         <div class="row">
+            <ul class="small-block-grid-4 footer-logo">
+              <li><img src="/assets/logo.png" alt="spletko.eu"></li>
+            </ul>
+          </div>          
               
 
 
@@ -186,15 +194,7 @@
         
       
       </div>
- 
       <!-- End Footer -->
- 
-
-
-
-    
-
-    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -50,17 +50,18 @@ $(window).scroll(function()
 		{
 		$('.show-footer').fadeIn(700);
     	} else {
-        $('.show-footer').fadeOut(100);
+        $('.show-footer').fadeOut(300);
 	}
 });
 // Back to TOP
-$(window).scroll(function() {
-	if ($(this).scrollTop()) {
-		$(".back-to-up").fadeIn(1000);
-	}else {
-		$(".back-to-up").fadeOut(200);	
-	}
-});
+//$(window).scroll(function() {
+//	if ($(this).scrollTop()) {
+//		$(".back-to-up").fadeIn(600);
+//	}else {
+//		$(".back-to-up").fadeOut(700);	
+//	}
+//});
+
 $(function() {
 	$("a#top").click(function() {
 	$("html,body").animate({"scrollTop" : 0},1000);
@@ -68,4 +69,95 @@ $(function() {
   });
 });
 
+$(window).scroll(function() {
+	if(document.body.scrollHeight - $(this).scrollTop() <=$(this).height()) 
+	{	$(".back-to-up").fadeIn(1500);
+	}else {
+		$(".back-to-up").fadeOut(700);}
+});		
 
+//   $(window).scroll(checkscroll);  
+
+
+  //    function checkscroll(){
+    //      var top = $(window).scrollTop();
+      //    if(top > 200){
+        //    $('#plane').fadeIn('slow');
+    //      }else{
+      //      $('#plane').fadeOut('slow');
+     //     }
+   //   }
+
+ //  checkscroll();
+
+//You also need to check the scrollTop value on load of the page. Try this:
+
+//function checkScrollPosition() {
+//    $(window).scrollTop() > 600 ? $('#plane').fadeOut('slow') : $('#plane').fadeIn('slow');
+//});
+
+//$(window).scroll(checkScrollPosition); // check on scroll
+//checkScrollPosition(); // check on load
+
+$(window).bind('scroll', function(){
+if($(this).scrollTop() > 200) {
+$("#plane").show();
+}
+});
+
+$(document).ready(function(){
+ $.ajaxSetup( {cache:false} );
+
+/* Load DIV When Page Loads */
+	$(window).load( function () {
+		$('.div1').fadeIn('slow', function() {
+			$(this).fadeTo("slow", 1);
+		});
+	});
+
+
+
+	/* Load DIV After Scrollbar Is Moved 100px */
+	$(window).scroll( function() {
+        if ( $(window).scrollTop() > 100 ) {
+           loadDiv2(); /* calls loadDiv2 Function below */
+        }
+	});
+
+	function loadDiv2() {
+		$('.div2').fadeIn('slow', function() {
+			$(this).fadeTo("slow", 1);
+		});
+	}
+
+
+
+ 	$(window).scroll( function() {
+ 		if ( $(window).scrollTop() > 100 ) {
+ 			HideMenu();
+ 		}
+ 	});	
+ 	
+ 		function HideMenu() {
+ 			$("#hideMenu").fadeOut("slow", function() {
+ 			//	$(this).fadeTo("slow", 1);
+ 			});
+ 		}
+
+
+ 	$(window).scroll( function() {
+ 		if ( $(window).scrollTop() < 100 ) {
+ 			ShowMenu();
+ 		}
+ 	});	
+ 	
+ 		function ShowMenu() {
+ 			$("#hideMenu").fadeIn("slow", function() {
+ 			//	$(this).fadeTo("slow", 1);
+ 			});
+ 		}
+
+
+
+
+	}); /* Do Not Remove */
