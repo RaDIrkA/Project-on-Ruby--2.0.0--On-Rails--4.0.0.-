@@ -21,6 +21,8 @@ test:
 production:
   adapter: postgresql
   database: my_datbase_production
+  username: info@spletko.Ensure
+  password: united1989
   pool: 5
   timeout: 5000
 
