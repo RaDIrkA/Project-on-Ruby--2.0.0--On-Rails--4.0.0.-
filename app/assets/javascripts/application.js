@@ -48,17 +48,24 @@ $(window).scroll(function()
 	{
 		if(document.body.scrollHeight - $(this).scrollTop() <=$(this).height()) 
 		{
-		$('.show-footer').fadeIn(1000);
+		$('.show-footer').fadeIn(700);
     	} else {
         $('.show-footer').fadeOut(100);
 	}
 });
 // Back to TOP
+$(window).scroll(function() {
+	if ($(this).scrollTop()) {
+		$(".back-to-up").fadeIn(1000);
+	}else {
+		$(".back-to-up").fadeOut(200);	
+	}
+});
 $(function() {
 	$("a#top").click(function() {
 	$("html,body").animate({"scrollTop" : 0},1000);
-	return false;	
-	});
+  return false;	
+  });
 });
 
 
