@@ -1,4 +1,2 @@
-authorization do 
-	
-end		
+
 
