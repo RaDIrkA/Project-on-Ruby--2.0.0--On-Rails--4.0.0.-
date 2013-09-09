@@ -11,6 +11,11 @@ module Project
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    # assets pipeline config to work on Heroku
+    config.assets.initialize_on_precompile = false
+
+    # add active admin assets to precompile list, loaded from vendor/assets
+    config.assets.precompile += %w( active_admin.js active_admin.css.scss )
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

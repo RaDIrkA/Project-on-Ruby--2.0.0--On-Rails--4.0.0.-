@@ -1,5 +1,5 @@
 /*
- *= require_self
+ *= require_three
  *= require foundation_and_overrides
  */
 // This includes all of the foundation global elements that are needed to work with any of the other files.
@@ -45,6 +45,7 @@
 @import 'blogs';
 @import 'domov';
 @import 'foundation_and_overrides';
+
 
 // footer css style
 .show-footer {
