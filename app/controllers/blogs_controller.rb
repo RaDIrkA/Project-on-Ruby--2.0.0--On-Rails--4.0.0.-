@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
 
 
 
+
   # GET /blogs
   # GET /blogs.json
   def index
@@ -80,6 +81,7 @@ class BlogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:Name, :subject)
+   #   @blog.update_attributes(params.require(:blog).permit(:Name, :subject))
     end
 end
     # form

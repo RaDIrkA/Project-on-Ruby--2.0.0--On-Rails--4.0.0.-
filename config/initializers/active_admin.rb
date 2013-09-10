@@ -1,5 +1,12 @@
 ActiveAdmin.setup do |config|
 
+
+# for strong parameter error create error ActiveModel::ForbiddenAttributesError
+  config.before_filter do
+  params.permit!
+  end
+
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -8,7 +15,7 @@ ActiveAdmin.setup do |config|
   config.site_title = "Baytfix administration panel 1.0 not stable"
   config.site_title_link = "http://spletko.eu/"
 
-  config.register_stylesheet 'active_admin_custom.css'
+  #config.register_stylesheet 'active_admin_custom.css'
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -213,6 +220,6 @@ ActiveAdmin.setup do |config|
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #
-  # config.filters = true
+  config.filters = true
 
 end

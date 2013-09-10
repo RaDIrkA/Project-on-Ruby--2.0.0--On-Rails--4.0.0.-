@@ -31,6 +31,7 @@ group :assets do
 	
 end
 
+gem 'railties', '4.0.0'
 gem 'zurb-foundation'
 gem "compass"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
