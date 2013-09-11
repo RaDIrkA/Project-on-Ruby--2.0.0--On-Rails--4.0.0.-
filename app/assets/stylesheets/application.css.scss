@@ -48,22 +48,26 @@
 
 
 // head menu glavni
-.name {
-  h1 {
-    text-align:center;
-    color:black;
-    font-size:12px;
-    top:-12%;
-    position:relative;
-     }
+
+    .name {
+          .baytfix {
+            text-align:center;
+            color:black;
+            font-family:georgia;    
+            top:-12%;
+            font-size: 10px;
+            position:relative;
+            margin:10px;
+          }
     .klikni {
       position:relative;
       font-size:10px;
       background:black;
       color:white;
-      width:240px;
-      height:18px;
+      width:260px;
+      height:16px;
       cursor:pointer;
+      top:-1px;
     } 
   } 
 
@@ -146,10 +150,13 @@
   background-color:#2BA6CB;width:100%;
   position:relative;
   padding:10px;top:1px;
-  margin:0 0;
   -webkit-box-shadow: 0px 5px 13px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 5px 13px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 5px 13px rgba(50, 50, 50, 0.75);
+
+    p { text-align:right;
+     
+  }
 }
 
    
@@ -177,7 +184,7 @@
 
 .spodnje-icon {      
       position:relative;
-      border:1px solid red;
+      border:1px solid none;
       height:70px;
   .footer-icons {
         float:right;
