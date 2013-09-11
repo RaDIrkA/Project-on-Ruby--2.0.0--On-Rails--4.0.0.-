@@ -4,89 +4,6 @@
 
 
 
-.name {
-		h1 {
-			text-align:center;
-			color:blue;
-			font-size:12px;
-			top:-12%;
-			position:relative;
-			}
-		.klikni {
-			position:relative;
-			font-size:10px;
-			background:black;
-			color:white;
-			width:240px;
-			height:18px;
-			cursor:pointer;
-			}	
-		}	
-
-.top-bar-section {
-	.title-area {
-		background:#111111;
-	
-		#prijavljeni {
-			position:relative;
-			top:10px;
-			text-align: center;
-				.name_a {
-					margin:4% auto;
-					width:290px;
-					height:40px;
-					border:1px solid none;	
-					position:relative;			
-						h1 {
-							text-align: center;
-							margin-top:4%;							
-							color: white;
-							font-size: 9px;
-							}
-								.p {
-									text-align: center;
-									border-bottom: 1px solid #2F6AEB;
-									font-color:white;
-									}
-
-							a {
-								color:white;
-								font-size: 11px;
-									&:hover {
-										color:blue;
-									}
-							}
-						}
-					}
-				}
-			}	
-			
-		#login {
-			border:1px solid black;
-			width:240px;
-			height:150px;
-			display:none;
-			padding:10px;
-			position:fixed;
-			z-index:2;
-			background-color:#111111;
-			color:white;
-			font-size:8px;
-			
-				h6, h5 {
-					color:white;
-					text-align:right;
-					bottom:-127px;
-					position:relative;
-				}
-
-				h5 {
-					bottom:-110px;
-					text-align:left;
-				}
-}			
-
-
 
 
 .div1 {
@@ -113,7 +30,4 @@
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
  
   width:500px;
-}
-#plane {
-  display:none;
 }

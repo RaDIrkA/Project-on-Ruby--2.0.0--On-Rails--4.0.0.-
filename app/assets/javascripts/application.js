@@ -44,8 +44,7 @@ $(document).ready(function() {
 	})
 });
 // Show Footer
-$(window).scroll(function() 
-	{
+$(window).scroll(function() {
 		if(document.body.scrollHeight - $(this).scrollTop() <=$(this).height()) 
 		{
 		$('.show-footer').fadeIn(700);
@@ -53,6 +52,22 @@ $(window).scroll(function()
         $('.show-footer').fadeOut(300);
 	}
 });
+
+// footer icons and logo	
+
+	$(window).scroll( function() {
+        if ( $(window).scrollTop() + $(window).height() >= $(document).height() ) {
+           showLogo(); }
+        else {hideLogo(); }   
+	});
+	function showLogo() {
+		$(".footer-logo").animate({"left":"-50px"},1000); 		
+  };
+  	function hideLogo() {
+		$(".footer-logo").fadeIn(1000); 		
+  };
+
+
 // Back to TOP
 //$(window).scroll(function() {
 //	if ($(this).scrollTop()) {
@@ -99,11 +114,7 @@ $(window).scroll(function() {
 //$(window).scroll(checkScrollPosition); // check on scroll
 //checkScrollPosition(); // check on load
 
-$(window).bind('scroll', function(){
-if($(this).scrollTop() > 200) {
-$("#plane").show();
-}
-});
+
 
 $(document).ready(function(){
  $.ajaxSetup( {cache:false} );
@@ -133,7 +144,7 @@ $(document).ready(function(){
 
 
  	$(window).scroll( function() {
- 		if ( $(window).scrollTop() > 100 ) {
+ 		if ( $(window).scrollTop() > 50 ) {
  			HideMenu();
  		}
  	});	
@@ -146,7 +157,7 @@ $(document).ready(function(){
 
 
  	$(window).scroll( function() {
- 		if ( $(window).scrollTop() < 100 ) {
+ 		if ( $(window).scrollTop() < 50 ) {
  			ShowMenu();
  		}
  	});	
@@ -159,5 +170,36 @@ $(document).ready(function(){
 
 
 
+	
+ 			
+
+
 
 	}); /* Do Not Remove */
+ 		
+
+// on scrool litel down menu slide down from nowhere :)
+//var startY = $("#hideMenu").position().top +
+//	$("#hideMenu").outerHeight();
+//
+//	$(window).scroll(function(){
+//		if( $(this).scrollTop() > startY ) {
+//			$(".glavni-menu").slideDown();
+//		}else{
+//			$(".glavni-menu").slideUp();
+//		}
+//	});	
+
+function ostani_navrhi() {
+	var window_top = $(window).scrollTop();
+	var div_top = $("#glavni-menu-sticky").offset().top;
+	if (window_top > div_top) {
+		$(".glavni-menu").addClass("stick");
+	}else {
+		$(".glavni-menu").removeClass("stick");
+	}
+}
+$(function() {
+	$(window).scroll(ostani_navrhi);
+	ostani_navrhi();
+});

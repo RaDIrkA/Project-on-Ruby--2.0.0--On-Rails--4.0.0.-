@@ -21,6 +21,18 @@
   </head>
 
   <body>
+    
+      
+
+      <!-- End Navigation druga -->
+      <div id="glavni-menu-sticky"></div>
+        <nav class="glavni-menu">
+          <p>World of web applications and languages</p>
+        </nav>
+
+
+
+
   <div id="hideMenu">
   <div id="login">
   <h6>Powered by RaDIrkA</h6>
@@ -30,7 +42,7 @@
 
   </div>
   <div class="fixed">
-  <nav class="top-bar">
+  <nav class="top-bar admin-panel">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
@@ -46,7 +58,6 @@
     
     <section class="top-bar-section">
       <ul class="title-area">
-      <!-- Title Area -->
       <div id="prijavljeni">
 
         <li class="name_a">
@@ -130,7 +141,15 @@
           <li><%= link_to_unless_current "contact", contact_path %></li>
         </ul><br>
   
-      <!-- End Navigation -->
+      <!-- End Navigation prva -->
+
+
+
+
+
+
+
+
 <a href="/users/sign_up" data-reveal-id="myModal" data-reveal-ajax="true">odpri</a>
 <button data-reveal-id="myModal" data-reveal-ajax="http://localhost:3000/users/sign_up">
     Click Me For A Modal
@@ -172,10 +191,10 @@
               </div>
           </div>  
             
-         <div class="row">
-            <ul class="small-block-grid-4 footer-logo">
-              <li><img src="/assets/logo.png" alt="spletko.eu"></li>
-            </ul>
+         <div class="row spodnje-icon">
+            <div class="small-block-grid-4 footer-icons">
+              <img src="/assets/logo.png" alt="spletko.eu" class="footer-logo">
+            </div>
           </div>          
               
 
