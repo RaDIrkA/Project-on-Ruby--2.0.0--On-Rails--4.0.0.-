@@ -2,7 +2,7 @@
 
 Project baytfix v 1.0 beta
 
-Things you may want to cover:
+[spletko.eu] info [blaz.sajovic@spletko.eu]
 
 * Ruby version "2.0.0"
 
