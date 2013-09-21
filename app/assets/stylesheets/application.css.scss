@@ -42,9 +42,6 @@
   "foundation/components/thumbs",
   "foundation/components/tooltips",
   "foundation/components/dropdown";
-@import 'blogs';
-@import 'domov';
-@import 'foundation_and_overrides';
 
 
 // head menu glavni
@@ -157,9 +154,10 @@
     p { text-align:right;
      
   }
+
 }
 
-   
+
 
 // footer css style
 .show-footer {
@@ -212,7 +210,13 @@
   }  
 }          
 
-
+.content {
+  margin:0 auto;
+  width:1024px;
+  height:2000px;
+  
+  border:1px solid red;
+}
 
 
 

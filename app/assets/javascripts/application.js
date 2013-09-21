@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require foundation
 //= require jquery_ujs
 /*
 //=require foundation/foundation
@@ -34,6 +35,7 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
 // Show login for admin
 $(document).ready(function() {
 	$(".klikni").click (function() {
@@ -59,14 +61,14 @@ $(window).scroll(function() {
         if ( $(window).scrollTop() + $(window).height() >= $(document).height() ) {
            showLogo(); }
         else {hideLogo(); }   
-	});
+
 	function showLogo() {
 		$(".footer-logo").animate({"left":"-50px"},1000); 		
   };
   	function hideLogo() {
 		$(".footer-logo").fadeIn(1000); 		
   };
-
+});
 
 // Back to TOP
 //$(window).scroll(function() {
@@ -77,7 +79,7 @@ $(window).scroll(function() {
 //	}
 //});
 
-$(function() {
+$(document).ready(function() {
 	$("a#top").click(function() {
 	$("html,body").animate({"scrollTop" : 0},1000);
   return false;	
@@ -146,30 +148,39 @@ $(document).ready(function(){
  	$(window).scroll( function() {
  		if ( $(window).scrollTop() > 50 ) {
  			HideMenu();
- 		}
- 	});	
- 	
+ 		}	
  		function HideMenu() {
  			$("#hideMenu").fadeOut("slow", function() {
  			//	$(this).fadeTo("slow", 1);
  			});
  		}
+ 	});
 
 
  	$(window).scroll( function() {
  		if ( $(window).scrollTop() < 50 ) {
  			ShowMenu();
  		}
- 	});	
- 	
  		function ShowMenu() {
  			$("#hideMenu").fadeIn("slow", function() {
  			//	$(this).fadeTo("slow", 1);
  			});
  		}
-
-
-
+ 	});		
+// fix menu na vrhu
+function ostani_navrhi() {
+	var window_top = $(window).scrollTop();
+	var div_top = $("#glavni-menu-sticky").offset().top;
+	if (window_top > div_top) {
+		$(".glavni-menu").addClass("stick");
+	}else {
+		$(".glavni-menu").removeClass("stick");
+	}
+}
+$(function() {
+	$(window).scroll(ostani_navrhi);
+	ostani_navrhi();
+});
 	
  			
 
@@ -190,16 +201,4 @@ $(document).ready(function(){
 //		}
 //	});	
 
-function ostani_navrhi() {
-	var window_top = $(window).scrollTop();
-	var div_top = $("#glavni-menu-sticky").offset().top;
-	if (window_top > div_top) {
-		$(".glavni-menu").addClass("stick");
-	}else {
-		$(".glavni-menu").removeClass("stick");
-	}
-}
-$(function() {
-	$(window).scroll(ostani_navrhi);
-	ostani_navrhi();
-});
+

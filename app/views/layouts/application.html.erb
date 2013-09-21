@@ -28,6 +28,11 @@
       <div id="glavni-menu-sticky"></div>
         <nav class="glavni-menu">
           <p>World of web applications and languages</p>
+
+          
+
+  
+      <!-- End Navigation prva -->
         </nav>
 
 
@@ -66,7 +71,7 @@
       Niste pravi?<br />
       <%= link_to "Odjavi me", destroy_user_session_path, :method => :delete %>
     <% else %>
-      <%= link_to "Registrirajte se", new_user_registration_path,"data-reveal-id" => "registracija" %> ali <%= link_to "Prijavite se", new_user_session_path, "data-reveal-id" => "prijava" %>
+      <%= link_to "Registrirajte se", new_user_registration_path %> ali <%= link_to "Prijavite se", new_user_session_path %>
     <% end %></h1>
         </li>
        </div> 
@@ -129,41 +134,27 @@
  </div>
  <br />
  </div>
-    <div class="large-12 columns">
+
+
+
+     <br><br>
+
+<div class="content">
  
       <!-- Navigation -->
         <hr>
         <ul class="button-group">
           
-          <li><%= link_to "nevem kam", domov_path, class: "button" %></li>
-          <li><%= link_to "Domov", domov_path, class: "button" %></li>
-          <li class="button"><%= link_to_unless_current "Pisite nam", contact_path %></li>
+          <li><%= link_to "nevem kam", domov_path %></li>
+          <li><%= link_to "Domov", domov_path %></li>
+          <li><%= link_to_unless_current "Pisite nam", contact_path %></li>
           <li><%= link_to_unless_current "contact", contact_path %></li>
-        </ul><br>
-  
-      <!-- End Navigation prva -->
-
-
-
-
-
-
-
-
-<a href="/users/sign_up" data-reveal-id="myModal" data-reveal-ajax="true">odpri</a>
-<button data-reveal-id="myModal" data-reveal-ajax="http://localhost:3000/users/sign_up">
-    Click Me For A Modal
-</button>
-<a href="#" data-reveal-id="prijava">Prijava</a>
-<a href="#" data-reveal-id="registracija">Registracija</a>
-
-<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
-
+        </ul>
 
 
 <%= yield %>
 
-
+</div>
 
 
 
@@ -217,6 +208,8 @@
     <%= javascript_include_tag "application" %>
   </body>
 </html>
+
+
 
 
 

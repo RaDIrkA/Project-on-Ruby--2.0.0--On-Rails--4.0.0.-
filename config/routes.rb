@@ -1,6 +1,7 @@
 Project::Application.routes.draw do
 
 
+  get "video" => "domov#video"
   #get "contact/index", as: 'contact/index'
 
   get "contact" => "contact#index"
@@ -30,6 +31,7 @@ Project::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'domov#index', as: 'domov'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
